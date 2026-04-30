@@ -22,14 +22,14 @@ pipeline {
         stage('Run Backend Container') {
             steps {
                 sh 'docker rm -f backend-app || true'
-                sh 'docker run -d -p 5000:5000 --name backend-app backend-app'
+                sh 'docker run -d -p 5001:5000 --name backend-app backend-app'
             }
         }
 
         stage('Run Frontend Container') {
             steps {
                 sh 'docker rm -f frontend-app || true'
-                sh 'docker run -d -p 3000:3000 --name frontend-app frontend-app'
+                sh 'docker run -d -p 3001:3000 --name frontend-app frontend-app'
             }
         }
 
